@@ -1,6 +1,10 @@
 {
   "scripts": {
-    "start": "gulp"
+    "start": "gulp",
+    "test": "gulp test",
+    "nomatch": "gulp clean nomatch",
+    "single": "gulp clean single",
+    "multi": "gulp clean multi"
   },
   "devDependencies": {
     "del": "^2.1.0",
