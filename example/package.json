@@ -3,6 +3,8 @@
     "start": "gulp"
   },
   "devDependencies": {
-    "gulp": "^3.9.0"
+    "del": "^2.1.0",
+    "gulp": "^3.9.0",
+    "gulp-sequence": "^0.4.1"
   }
 }
