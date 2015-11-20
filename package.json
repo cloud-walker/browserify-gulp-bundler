@@ -2,9 +2,12 @@
   "name": "browserify-gulp-bundler",
   "version": "0.0.0",
   "scripts": {
-    "clean": "rimraf lib"
+    "clean": "rimraf lib",
+    "babel": "babel src --out-dir lib",
+    "build": "npm run clean && npm run babel"
   },
   "devDependencies": {
+    "babel-cli": "^6.2.0",
     "rimraf": "^2.4.4"
   }
 }
