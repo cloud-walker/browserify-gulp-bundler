@@ -1,4 +1,10 @@
 {
   "name": "browserify-gulp-bundler",
-  "version": "0.0.0"
+  "version": "0.0.0",
+  "scripts": {
+    "clean": "rimraf lib"
+  },
+  "devDependencies": {
+    "rimraf": "^2.4.4"
+  }
 }
