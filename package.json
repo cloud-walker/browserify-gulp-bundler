@@ -7,6 +7,7 @@
     "build": "gulp build",
     "start": "gulp"
   },
+  "main": "lib/index.js",
   "devDependencies": {
     "babel-plugin-add-module-exports": "^0.1.1",
     "babel-preset-es2015": "^6.1.18",
