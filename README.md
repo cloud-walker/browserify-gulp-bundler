@@ -11,4 +11,4 @@ add this repo to your package.json and do `npm up`
 ### `opts`
 `opts` is an object containing configuration options.
 
-**Boolean** `opts.watch` indicate if you want to use watchify or not to use browserify in watch mode. *(default: false)*
+*Boolean* `opts.watch` *(default: false)* indicate if you want to use watchify or not to use browserify in watch mode.
