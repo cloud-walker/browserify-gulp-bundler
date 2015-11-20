@@ -2,6 +2,7 @@ import glob           from 'glob'
 import colors         from 'colors'
 import log            from './log'
 import generateStream from './generateStream'
+import es             from 'event-stream'
 
 /**
  * @param  {String} pattern [Glob pattern]
@@ -11,8 +12,6 @@ import generateStream from './generateStream'
 export default function (pattern, opts = {}) {
   const entries = glob.sync(pattern)
 
-  // console.log(entries)
-
   switch (entries.length) {
     case 0:
       log(`${'No bundle found'.yellow}...`)
@@ -20,7 +19,9 @@ export default function (pattern, opts = {}) {
     case 1:
       return generateStream(entries[0], opts)
     default:
-      log('Multiple bundles not supported yet..'.red)
-      return false
+      const streams = entries.map(function (entry) {
+        return generateStream(entry, opts)
+      })
+      return es.merge(streams)
   }
 }
