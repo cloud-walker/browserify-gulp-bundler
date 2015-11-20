@@ -11,14 +11,20 @@
     "babel-plugin-add-module-exports": "^0.1.1",
     "babel-preset-es2015": "^6.1.18",
     "del": "^2.1.0",
-    "gulp": "^3.9.0",
     "gulp-babel": "^6.1.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.0.1",
     "gulp-sequence": "^0.4.1",
     "gulp-watch": "^4.3.5"
   },
   "dependencies": {
+    "browserify": "^12.0.1",
     "colors": "^1.1.2",
     "glob": "^6.0.1",
-    "moment": "^2.10.6"
+    "gulp": "^3.9.0",
+    "moment": "^2.10.6",
+    "through2": "^2.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.6.1"
   }
 }
