@@ -1,9 +1,10 @@
 import colors from 'colors'
 import moment from 'moment'
 
-let time   = `[${moment().format('HH:mm:ss').grey}]`
-let emblem = `[${'JS'.yellow}]`
+const emblem = `[${'JS'.yellow}]`
 
 export default function (msg) {
+  let time = `[${moment().format('HH:mm:ss').grey}]`
+
   console.log(time, emblem, msg)
 }

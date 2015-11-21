@@ -1,10 +1,11 @@
-import browserify from 'browserify'
-import watchify   from 'watchify'
-import log        from './log'
-import source     from 'vinyl-source-stream'
-import through    from 'through2'
-import path       from 'path'
-import {dest}     from 'gulp'
+import browserify      from 'browserify'
+import watchify        from 'watchify'
+import log             from './log'
+import parseTransforms from './parseTransforms'
+import source          from 'vinyl-source-stream'
+import through         from 'through2'
+import path            from 'path'
+import {dest}          from 'gulp'
 
 /**
  * Generate the Browserify stream
@@ -30,6 +31,10 @@ export default function (entry, opts = {}) {
     b.on('time', function (time) {
       return log(`${entry} ${parseTime(time)}`)
     })
+  }
+
+  if (opt.transforms) {
+    parseTransforms(b, opts.transforms)
   }
 
   return generateBundle(b, entry)
