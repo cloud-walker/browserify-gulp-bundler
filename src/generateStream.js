@@ -33,7 +33,7 @@ export default function (entry, opts = {}) {
     })
   }
 
-  if (opt.transforms) {
+  if (opts.transforms) {
     parseTransforms(b, opts.transforms)
   }
 
