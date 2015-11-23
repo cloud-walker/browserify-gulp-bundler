@@ -19,6 +19,10 @@ export default function (pattern, opts = {}) {
     })
   }
 
+  if (!opts.pipes) {
+    log(`${'No pipes option found'.yellow}...`)
+  }
+
   switch (entries.length) {
     case 0:
       log(`${'No bundle found'.yellow}...`)

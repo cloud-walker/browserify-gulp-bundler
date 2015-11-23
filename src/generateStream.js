@@ -81,5 +81,5 @@ function generateBundle(b, entry, opts) {
       this.push(file)
       done()
     }))
-    .pipe(dest('dist'))
+    .pipe(opts.pipes())
 }
