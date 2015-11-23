@@ -28,5 +28,9 @@ gulp.task('multi', function () {
   return bundler('src/*.js')
 })
 gulp.task('multi:watch', function () {
-  return bundler('src/*.js', {watch: true})
+  return bundler('src/*.js', {
+    watch: true,
+    paths: ['src'],
+    sourcemaps: true
+  })
 })

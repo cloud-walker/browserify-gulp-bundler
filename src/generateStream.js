@@ -18,7 +18,9 @@ export default function (entry, opts = {}) {
   const b = browserify({
     cache       : {},
     packageCache: {},
-    fullPaths   : true
+    fullPaths   : true,
+    paths       : opts.paths || ['node_modules'],
+    debug       : opts.sourcemaps || false
   })
 
   b.add(entry)

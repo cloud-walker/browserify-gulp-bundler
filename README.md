@@ -15,3 +15,7 @@ add this repo to your package.json and do `npm up`
 
 *String* `opts.basePath`
 Manual base path of the glob pattern
+
+*Boolean* `opts.sourcemaps` *(default: false)*
+
+*Array* `opts.paths` *(default: ['node_modules'])*
