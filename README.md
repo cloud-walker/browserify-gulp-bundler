@@ -12,3 +12,6 @@ add this repo to your package.json and do `npm up`
 `opts` is an object containing configuration options.
 
 *Boolean* `opts.watch` *(default: false)* indicate if you want to use watchify or not to use browserify in watch mode.
+
+*String* `opts.basePath`
+Manual base path of the glob pattern
