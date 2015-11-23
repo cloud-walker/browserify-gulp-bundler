@@ -26,7 +26,7 @@ export default function (entry, opts = {}) {
   if (opts.watch) {
     b.plugin(watchify)
     b.on('update', function () {
-      return generateBundle(b, entry)
+      return generateBundle(b, entry, opts)
     })
     b.on('time', function (time) {
       return log(`${entry} ${parseTime(time)}`)
@@ -37,7 +37,7 @@ export default function (entry, opts = {}) {
     parseTransforms(b, opts.transforms)
   }
 
-  return generateBundle(b, entry)
+  return generateBundle(b, entry, opts)
 }
 
 /**
@@ -68,14 +68,14 @@ function parseTime(time) {
  * @param  {String} entry
  * @return {Object}       [Browserify stream]
  */
-function generateBundle(b, entry) {
+function generateBundle(b, entry, opts) {
   return b.bundle()
     .on('error', function (err) {
       console.log(`${err}`.red)
     })
     .pipe(source(entry))
     .pipe(through.obj(function (file, enc, done) {
-      file.base = path.resolve(entry.split(path.sep).shift())
+      file.base = path.resolve(opts.basePath)
       this.push(file)
       done()
     }))
