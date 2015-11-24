@@ -20,7 +20,8 @@ export default function (entry, opts = {}) {
     packageCache: {},
     fullPaths   : true,
     paths       : opts.paths || ['node_modules'],
-    debug       : opts.sourcemaps || false
+    debug       : opts.sourcemaps || false,
+    extensions  : opts.extensions || ['.js']
   })
 
   b.add(entry)
