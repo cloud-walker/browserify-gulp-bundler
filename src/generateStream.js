@@ -5,7 +5,6 @@ import parseTransforms from './parseTransforms'
 import source          from 'vinyl-source-stream'
 import through         from 'through2'
 import path            from 'path'
-import {dest}          from 'gulp'
 
 /**
  * Generate the Browserify stream
@@ -73,7 +72,7 @@ function parseTime(time) {
  */
 function generateBundle(b, entry, opts) {
   return b.bundle()
-    .on('error', function (err) {
+    .on('error', opts.onError ? opts.onError : function (err) {
       console.log(`${err}`.red)
     })
     .pipe(source(entry))

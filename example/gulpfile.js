@@ -2,6 +2,7 @@ var gulp     = require('gulp')
 var sequence = require('gulp-sequence')
 var del      = require('del')
 var lazypipe = require('lazypipe')
+var notify   = require('gulp-notify')
 var bundler  = require('../lib')
 
 gulp.task('default', sequence('clean', 'multi:watch'))
@@ -33,6 +34,10 @@ gulp.task('multi:watch', function () {
     watch: true,
     paths: ['src'],
     sourcemaps: true,
+    onError: notify.onError({
+      title: 'JS error',
+      message: '<%= error %>'
+    }),
     pipes: lazypipe()
       .pipe(gulp.dest, 'dist')
   })
